@@ -1,0 +1,25 @@
+﻿<Application x:Class="ForStudents.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ForStudents"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <!--PRIMARY-->
+            <SolidColorBrush x:Key="PrimaryHueLightBrush" Color="#FFB9ECFF"/>
+            <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush" Color="#000000"/>
+            <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#FF6CB6F1"/>
+            <SolidColorBrush x:Key="PrimaryHueMidForegroundBrush" Color="#000000"/>
+            <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="#5d99c6"/>
+            <SolidColorBrush x:Key="PrimaryHueDarkForegroundBrush" Color="#000000"/>
+            <!--ACCENT-->
+            <SolidColorBrush x:Key="SecondaryAccentBrush" Color="#64b5f6"/>
+            <SolidColorBrush x:Key="SecondaryAccentForegroundBrush" Color="#000000"/>
+           
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

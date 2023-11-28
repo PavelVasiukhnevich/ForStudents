@@ -1,0 +1,67 @@
+﻿<Page x:Class="ForStudents.Views.CreateNotePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ForStudents.Views"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CreateNotePage">
+
+
+    <Grid Background="White" x:Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="LightGray">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Grid.Column="0" Background="Gray" Margin="5">
+                <Image Margin="5" x:Name="Img"  Source="{Binding Note.FilePath}"/>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="0" Margin="5">
+                <Button Content="Select" HorizontalAlignment="Left" 
+                        Command="{Binding SelectCommand}"/>
+                <Button Content="Open Picture" HorizontalAlignment="Right"
+                        Command="{Binding OpenPictureCommand}"/>
+            </Grid>
+
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center" 
+                        Grid.Row="0" Grid.RowSpan="2" Grid.Column="1">
+                <TextBox TextWrapping="Wrap"  Text="{Binding Note.Description, UpdateSourceTrigger=PropertyChanged}" 
+                         Margin="5" VerticalAlignment="Center" FontSize="20" 
+                         materialDesign:HintAssist.Hint="Description" 
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <TextBox TextWrapping="Wrap" Text="{Binding Note.FilePath, UpdateSourceTrigger=PropertyChanged}" 
+                         Margin="5" VerticalAlignment="Center" FontSize="20" 
+                         materialDesign:HintAssist.Hint="File path" 
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button x:Name="BtnSaveAs"  Margin="5" Content="Open Folder"
+                            Command="{Binding OpenFolderCommand}"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <Grid Background="Gray" Grid.Row="1">
+            <StackPanel x:Name="EditControls" Margin="5" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button FontSize="20" Height="33" Content="Save" Margin="5" 
+                        Command="{Binding SaveCommand}"/>
+                <Button FontSize="20" Height="33" Content="Cancel"  Margin="5"
+                        Command="{Binding CancelCommand}"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,49 @@
+﻿<Page x:Class="ForStudents.Views.RegistrationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ForStudents.Views"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="500"
+      Title="RegistrationPage">
+
+    <Grid>
+        <materialDesign:Card materialDesign:ElevationAssist.Elevation="Dp12" Background="#FF999999" />
+
+        <Grid Margin="10">
+            <materialDesign:Card materialDesign:ElevationAssist.Elevation="Dp1"/>
+            <StackPanel  VerticalAlignment="Top" Orientation="Vertical" Margin="0 20">
+                <TextBlock HorizontalAlignment="Center"  FontSize="30">Registration:</TextBlock>
+            </StackPanel>
+            <StackPanel Margin="20 0" VerticalAlignment="Center">
+                <TextBox  FontSize="20" materialDesign:HintAssist.Hint="Name" 
+                          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                          Text="{Binding User.Name, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox  FontSize="20" materialDesign:HintAssist.Hint="Login" 
+                          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                          Text="{Binding User.Login, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox  FontSize="20" materialDesign:HintAssist.Hint="Password" 
+                          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                          Text="{Binding User.Password, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox  FontSize="20" materialDesign:HintAssist.Hint="Confirm the password" 
+                          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                          Text="{Binding ConfirmPassword, UpdateSourceTrigger=PropertyChanged}"/>
+
+            </StackPanel>
+            <StackPanel Margin="20" VerticalAlignment="Bottom" HorizontalAlignment="Center" Orientation="Horizontal">
+                <Button Content="Create" HorizontalAlignment="Right" Height="auto" FontSize="20"  
+                        Style="{StaticResource MaterialDesignFlatAccentBgButton}"
+                        Margin="10" Command="{Binding CreateCommand}">
+                </Button>
+                <Button Content="Cancel" HorizontalAlignment="Right" Height="auto" FontSize="20"  
+                        Style="{StaticResource MaterialDesignFlatAccentBgButton}"
+                        Margin="10" Command="{Binding CancelCommand}">
+                </Button>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</Page>
